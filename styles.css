@@ -467,7 +467,43 @@ button {
 
 /* Modern Process Section */
 .process-section {
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
+}
+
+.process-steps-wrapper {
+  position: relative;
+}
+
+.process-steps-wrapper::before,
+.process-steps-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 16px;
+  width: 60px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.process-steps-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(248, 241, 231, 0.95), transparent);
+}
+
+.process-steps-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(248, 241, 231, 0.95), transparent);
+}
+
+.process-steps-wrapper.can-scroll-left::before {
+  opacity: 1;
+}
+
+.process-steps-wrapper.can-scroll-right::after {
+  opacity: 1;
 }
 
 .process-progress {
@@ -543,14 +579,31 @@ button {
   align-items: stretch;
   gap: 0;
   margin-top: 24px;
-  overflow-x: auto;
+  overflow-x: scroll;
+  overflow-y: visible;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 8px;
+  padding-bottom: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) rgba(208, 107, 45, 0.1);
+}
+
+.process-steps::-webkit-scrollbar {
+  height: 6px;
+}
+
+.process-steps::-webkit-scrollbar-track {
+  background: rgba(208, 107, 45, 0.1);
+  border-radius: 3px;
+}
+
+.process-steps::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
 }
 
 .process-step {
-  flex: 0 0 calc(20% - 16px);
+  flex: 0 0 220px;
   min-width: 200px;
   padding: 24px 20px;
   border-radius: 20px;
