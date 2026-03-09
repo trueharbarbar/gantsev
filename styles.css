@@ -28,6 +28,7 @@ body {
   margin: 0;
   font-family: "Manrope", "Segoe UI", sans-serif;
   color: var(--ink);
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top right, rgba(208, 107, 45, 0.18), transparent 36%),
     radial-gradient(circle at left 20%, rgba(40, 50, 40, 0.14), transparent 28%),
@@ -170,17 +171,20 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.1rem, 5vw, 4.5rem);
-  max-width: 10ch;
+  font-size: clamp(1.7rem, 3.5vw, 3.4rem);
+  max-width: 14ch;
+  line-height: 1.1;
 }
 
 h2 {
-  font-size: clamp(1.6rem, 3vw, 2.7rem);
-  max-width: 16ch;
+  font-size: clamp(1.35rem, 2.4vw, 2.4rem);
+  max-width: 22ch;
+  line-height: 1.12;
 }
 
 h3 {
   font-size: 1.02rem;
+  line-height: 1.3;
 }
 
 p,
@@ -807,17 +811,19 @@ button {
   position: relative;
   background: linear-gradient(135deg, rgba(208, 107, 45, 0.08), rgba(245, 228, 208, 0.95));
   border: 2px solid var(--accent);
+  padding-top: 42px;
 }
 
 .popular-badge {
   position: absolute;
-  top: -12px;
+  top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 6px 16px;
+  white-space: nowrap;
+  padding: 5px 14px;
   background: var(--accent);
   color: #fff;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1089,18 +1095,173 @@ button {
   color: var(--muted);
 }
 
-@media (max-width: 980px) {
-  .hero,
-  .proposal,
-  .cases-grid,
-  .showcase-grid,
-  .three-up,
-  .trust-strip,
-  .reviews-grid,
-  .site-footer {
+/* ── Tablet: 900px ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  h1,
+  h2 {
+    max-width: none;
+  }
+
+  /* Header collapses nav below brand+cta */
+  .site-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Hero: stack vertically */
+  .hero {
     grid-template-columns: 1fr;
   }
 
+  .hero-visual {
+    min-height: 300px;
+    max-height: 400px;
+  }
+
+  /* Grids → single column */
+  .trust-strip,
+  .site-footer {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .three-up,
+  .cases-grid,
+  .showcase-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .case-card-large {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  /* Guarantees: 3-col → 2-col */
+  .guarantees-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .guarantee-item {
+    grid-column: span 2;
+  }
+
+  .guarantee-item:nth-child(4),
+  .guarantee-item:nth-child(5) {
+    grid-column: span 2;
+  }
+
+  /* Process steps: allow horizontal scroll on tablet */
+  .process-step {
+    flex: 0 0 clamp(180px, 22vw, 220px);
+  }
+
+  .footer-legal {
+    text-align: left;
+  }
+}
+
+/* ── Mobile: 600px ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .page-shell {
+    width: calc(100% - 16px);
+    padding-top: 8px;
+    padding-bottom: 32px;
+  }
+
+  .site-header,
+  .section,
+  .hero,
+  .site-footer,
+  .trust-strip {
+    border-radius: 18px;
+  }
+
+  .site-header {
+    position: static;
+    padding: 12px 14px;
+  }
+
+  .brand img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-city {
+    display: none;
+  }
+
+  .main-nav {
+    gap: 8px 12px;
+    font-size: 0.84rem;
+  }
+
+  .header-cta {
+    font-size: 0.88rem;
+    padding: 10px 14px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 20px;
+  }
+
+  .hero-visual {
+    min-height: 220px;
+    max-height: 280px;
+  }
+
+  .hero-card {
+    position: static;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-pills {
+    flex-direction: column;
+  }
+
+  .contact-pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Trust strip: 1 col */
+  .trust-strip {
+    grid-template-columns: 1fr;
+  }
+
+  /* Cards: 1 col */
+  .three-up,
+  .cases-grid,
+  .showcase-grid,
+  .reviews-grid,
+  .proposal {
+    grid-template-columns: 1fr;
+  }
+
+  .case-card-large {
+    grid-column: auto;
+  }
+
+  /* Guarantees: 1 col */
   .guarantees-grid {
     grid-template-columns: 1fr;
   }
@@ -1111,55 +1272,36 @@ button {
     grid-column: auto;
   }
 
+  /* Footer: 1 col */
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+
   .footer-legal {
     text-align: left;
   }
 
-  h1,
-  h2 {
-    max-width: none;
-  }
-
-  .site-header {
-    flex-wrap: wrap;
-  }
-
-  .main-nav {
-    order: 3;
+  /* Buttons */
+  .button {
     width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    min-height: 50px;
+    font-size: 0.92rem;
   }
 
-  .hero-visual {
-    min-height: 320px;
-  }
-
-  .site-footer {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 720px) {
-  .page-shell {
-    width: min(100%, calc(100% - 18px));
-    padding-top: 10px;
-  }
-
-  /* Process section mobile */
+  /* Process section */
   .process-progress {
-    margin: 20px auto 24px;
+    margin: 16px auto 20px;
   }
 
   .progress-marker {
-    width: 36px;
-    height: 36px;
-    font-size: 0.85rem;
+    width: 34px;
+    height: 34px;
+    font-size: 0.82rem;
   }
 
   .process-steps {
     flex-direction: column;
-    gap: 12px;
+    overflow-x: visible;
   }
 
   .process-step {
@@ -1171,67 +1313,17 @@ button {
 
   .step-connector {
     transform: rotate(90deg);
-    flex: 0 0 32px;
+    flex: 0 0 28px;
+    align-self: center;
   }
 
-  .site-header,
-  .section,
-  .hero,
-  .site-footer,
-  .trust-strip {
-    border-radius: 20px;
-  }
-
-  .site-header {
-    position: static;
-    padding: 14px;
-  }
-
-  .brand img {
-    width: 44px;
-    height: 44px;
-  }
-
-  .main-nav {
-    gap: 10px 14px;
-    font-size: 0.9rem;
-  }
-
-  .header-cta,
-  .button {
-    width: 100%;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-  }
-
-  .contact-pills {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .timeline-item {
-    grid-template-columns: 1fr;
-  }
-
-  .timeline-item > span:first-child {
-    width: 48px;
-    height: 48px;
-  }
-
-  .hero-card {
-    position: static;
-    width: 100%;
-    margin-top: 14px;
-  }
-
+  /* Final CTA */
   .final-cta-actions {
     flex-direction: column;
   }
 
   .calculator-features {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 }
