@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ганцев | Логотип и фирменный стиль</title>
+  <style>
+    :root {
+      --bg: #efe7db;
+      --paper: #f8f2e9;
+      --ink: #1e1b17;
+      --graphite: #1e2421;
+      --muted: #65584b;
+      --gold: #c89a61;
+      --line: rgba(52, 41, 28, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(200, 154, 97, 0.18), transparent 28%),
+        linear-gradient(180deg, #f2eadf 0%, #ebe2d5 100%);
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    .hero,
+    .panel {
+      background: rgba(248, 242, 233, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 24px 60px rgba(50, 37, 21, 0.08);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      padding: 28px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+    }
+
+    h1 { font-size: clamp(38px, 5vw, 72px); }
+    h2 { font-size: clamp(26px, 3vw, 42px); }
+    h3 { font-size: 20px; }
+
+    p {
+      margin: 0;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .principles {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 6px 0 0;
+      list-style: none;
+    }
+
+    .principles li {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(52, 41, 28, 0.08);
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .swatch-grid,
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .swatch {
+      padding: 14px;
+      border-radius: 20px;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(52, 41, 28, 0.08);
+      font-weight: 700;
+    }
+
+    .swatch.dark { background: var(--graphite); color: #fff; }
+    .swatch.gold { background: var(--gold); color: #fff; }
+    .swatch.light { background: #f4e7d2; color: var(--ink); }
+    .swatch.paper { background: #fff8ee; color: var(--ink); }
+
+    .panel {
+      margin-top: 22px;
+      padding: 24px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
+
+    .logo-showcase {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .logo-box {
+      padding: 24px;
+      border-radius: 24px;
+      border: 1px solid rgba(52, 41, 28, 0.08);
+    }
+
+    .logo-box.light { background: #fff8ee; }
+    .logo-box.dark { background: var(--graphite); }
+
+    .logo-box img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-stage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .card-stage img {
+      width: 100%;
+      border-radius: 24px;
+      display: block;
+      border: 1px solid rgba(52, 41, 28, 0.08);
+      background: #fff;
+    }
+
+    .cards .note {
+      padding: 18px;
+      border-radius: 22px;
+      background: #fff8ee;
+      border: 1px solid rgba(52, 41, 28, 0.08);
+    }
+
+    .cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .note p { margin-top: 10px; }
+
+    @media (max-width: 900px) {
+      .hero,
+      .logo-showcase,
+      .card-stage,
+      .swatch-grid,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-head {
+        display: grid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Фирменный стиль</p>
+        <h1>ГАНЦЕВ</h1>
+        <p>
+          Логика бренда: не “шумная стройка”, а взрослая строительная компания, которая
+          наводит порядок в пространстве и доводит объект до чистого, уверенного результата.
+        </p>
+        <ul class="principles">
+          <li>Точная геометрия и понятная структура</li>
+          <li>Тёмная статусная база без визуального шума</li>
+          <li>Тёплый металлический акцент как знак качества</li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/logo-gantsev.svg" alt="Логотип Ганцев">
+        <div class="swatch-grid">
+          <div class="swatch dark"><span>Graphite</span><span>#1E2421</span></div>
+          <div class="swatch gold"><span>Accent Gold</span><span>#C89A61</span></div>
+          <div class="swatch light"><span>Warm Ivory</span><span>#F4E7D2</span></div>
+          <div class="swatch paper"><span>Paper</span><span>#FFF8EE</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Логотип</p>
+          <h2>Основная и инверсная подача</h2>
+        </div>
+        <p>Основа знака: спокойный шрифтовой логотип с более статусным характером и отдельная графическая марка в форме дома.</p>
+      </div>
+      <div class="logo-showcase">
+        <div class="logo-box light">
+          <img src="assets/logo-gantsev.svg" alt="Логотип на светлом фоне">
+        </div>
+        <div class="logo-box dark">
+          <img src="assets/logo-gantsev-mark.svg" alt="Марка логотипа">
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Визитка</p>
+          <h2>Как логотип выглядит в носителях</h2>
+        </div>
+        <p>Это не финальная полиграфия, а рабочий макет для оценки характера бренда.</p>
+      </div>
+      <div class="card-stage">
+        <img src="assets/business-card-gantsev-front.svg" alt="Лицевая сторона визитки">
+        <img src="assets/business-card-gantsev-back.svg" alt="Оборотная сторона визитки">
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Принципы</p>
+          <h2>На чём держится стиль</h2>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="note">
+          <h3>Характер</h3>
+          <p>Спокойный, взрослый, собранный. Без дешёвых “строительных” эффектов и без лишнего пафоса.</p>
+        </div>
+        <div class="note">
+          <h3>Графика</h3>
+          <p>Жёсткая сетка, прямые линии, квадратный штрих. В основе идея порядка, каркаса и выверенной геометрии.</p>
+        </div>
+        <div class="note">
+          <h3>Сценарий</h3>
+          <p>Такой стиль хорошо работает на сайте, визитке, коммерческом предложении и оформлении объектов.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

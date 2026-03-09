@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ганцев | Фирменный стиль Luxe</title>
+  <style>
+    :root {
+      --bg: #efe7db;
+      --paper: #fff8ee;
+      --ink: #181c19;
+      --muted: #6b5d4e;
+      --graphite: #121815;
+      --gold: #e0af3a;
+      --ivory: #f5efe5;
+      --line: rgba(58, 42, 19, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(224, 175, 58, 0.15), transparent 25%),
+        linear-gradient(180deg, #f2eadf 0%, #ebe2d5 100%);
+    }
+
+    .wrap {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+
+    .panel {
+      background: rgba(248, 242, 233, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 22px 54px rgba(52, 37, 21, 0.08);
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-size: clamp(32px, 4vw, 56px);
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .intro {
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--graphite);
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .hero img,
+    .stage img,
+    .cards img,
+    .board img {
+      width: 100%;
+      display: block;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .stage,
+    .cards,
+    .board {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      padding: 16px;
+    }
+
+    .swatches {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .swatch {
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px solid rgba(58, 42, 19, 0.08);
+      font-weight: 700;
+    }
+
+    .swatch.dark { background: var(--graphite); color: var(--ivory); }
+    .swatch.gold { background: var(--gold); color: var(--graphite); }
+    .swatch.ivory { background: var(--ivory); color: var(--graphite); }
+
+    .cards-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .note {
+      display: grid;
+      gap: 10px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255, 248, 238, 0.82);
+      border: 1px solid rgba(58, 42, 19, 0.08);
+    }
+
+    @media (max-width: 900px) {
+      .grid,
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="panel intro">
+      <h1>Фирменный стиль `Ганцев`</h1>
+      <p>Фиксируем выбранный стиль: глубокий графитовый фон, бело-золотой знак, классическая статусная типографика и спокойная дорогая подача без визуального шума.</p>
+      <div class="hero">
+        <img src="assets/logo-gantsev-luxe-lockup.svg" alt="Основной логотип Ганцев">
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Носители</h2>
+        <p>Базовый набор для старта: основной логотип, лицевая и обратная стороны визитки.</p>
+        <div class="cards-grid" style="margin-top: 16px;">
+          <div class="cards">
+            <img src="assets/business-card-gantsev-luxe-front.svg" alt="Визитка лицевая сторона">
+          </div>
+          <div class="cards">
+            <img src="assets/business-card-gantsev-luxe-back.svg" alt="Визитка обратная сторона">
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Палитра</h2>
+        <p>Эта палитра и будет базой для сайта, визиток, шапок и коммерческих предложений.</p>
+        <div class="swatches">
+          <div class="swatch dark">Graphite — #121815</div>
+          <div class="swatch gold">Accent Gold — #E0AF3A</div>
+          <div class="swatch ivory">Warm Ivory — #F5EFE5</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Правила стиля</h2>
+      <div class="cards-grid" style="margin-top: 16px;">
+        <div class="note">
+          <h3>Образ</h3>
+          <p>Солидный, точный, дорогой. Больше доверия и статуса, меньше “строительной” суеты.</p>
+        </div>
+        <div class="note">
+          <h3>Шрифт</h3>
+          <p>Название в классическом serif, сервисная информация в чистом гротеске. Это даёт баланс статуса и ясности.</p>
+        </div>
+        <div class="note">
+          <h3>Слоган</h3>
+          <p>Порядок в пространстве. Результат в деталях.</p>
+        </div>
+        <div class="note">
+          <h3>Применение</h3>
+          <p>Этот стиль уже можно переносить на сайт, визитки, коммерческие предложения и соцсети.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Брендборд</h2>
+      <p>Один лист, чтобы быстро показывать стиль и сверять дальнейшие макеты.</p>
+      <div class="board" style="margin-top: 16px;">
+        <img src="assets/brand-board-gantsev-luxe.svg" alt="Брендборд Ганцев">
+      </div>
+    </section>
+  </div>
+</body>
+</html>

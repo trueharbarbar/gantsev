@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ганцев | Просмотр логотипа</title>
+  <style>
+    :root {
+      --bg: #efe7db;
+      --paper: #fff8ee;
+      --ink: #181c19;
+      --muted: #6b5d4e;
+      --line: rgba(58, 42, 19, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(200, 154, 97, 0.18), transparent 26%),
+        linear-gradient(180deg, #f2eadf 0%, #ebe2d5 100%);
+    }
+
+    .wrap {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+
+    .panel {
+      background: rgba(248, 242, 233, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 22px 54px rgba(52, 37, 21, 0.08);
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    h1, h2 {
+      margin: 0 0 10px;
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4vw, 52px);
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 320px 1fr;
+    }
+
+    .stage {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      padding: 20px;
+    }
+
+    .stage.dark {
+      background: #181c19;
+    }
+
+    .stage img {
+      width: 100%;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="panel">
+      <h1>Просмотр логотипа без Inkscape</h1>
+      <p>Эта страница открывается в браузере. Здесь можно спокойно посмотреть знак и полный логотип, не открывая SVG напрямую через Inkscape.</p>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Знак</h2>
+        <p>Два пересекающихся силуэта: светлый и золотой, с посылом перехода от основы к чистовому результату.</p>
+      </div>
+      <div class="stage dark">
+        <img src="assets/logo-gantsev-overlap-house-mark.svg" alt="Знак логотипа Ганцев">
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Полный логотип</h2>
+      <p>Знак + название + подпись компании. Это уже можно использовать как основу для сайта и визитки.</p>
+      <div class="stage dark" style="margin-top: 16px;">
+        <img src="assets/logo-gantsev-overlap-house-full.svg" alt="Полный логотип Ганцев">
+      </div>
+    </section>
+  </div>
+</body>
+</html>
