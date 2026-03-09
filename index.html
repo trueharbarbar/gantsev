@@ -342,53 +342,157 @@
       </section>
 
       <!-- PROCESS: Этапы работы -->
-      <section class="section" id="process">
-        <div class="section-heading">
+      <section class="section process-section" id="process">
+        <div class="section-heading" style="text-align: center; max-width: 640px; margin: 0 auto;">
           <p class="eyebrow">Как мы работаем</p>
-          <h2>От звонка до ключей за 5 понятных шагов</h2>
+          <h2 style="max-width: none;">От звонка до ключей за 5 понятных шагов</h2>
+          <p>Прозрачный процесс с понятным результатом на каждом этапе</p>
         </div>
 
-        <div class="timeline">
-          <article class="timeline-item">
-            <span>01</span>
-            <div>
-              <h3>Заявка и консультация</h3>
-              <p>Вы оставляете заявку, мы перезваниваем за 15 минут. Узнаём про объект, задачи и бюджет. Договариваемся о замере.</p>
-              <span class="timeline-result">Результат: понимание задачи, дата замера</span>
+        <!-- Progress bar -->
+        <div class="process-progress">
+          <div class="progress-track">
+            <div class="progress-fill"></div>
+          </div>
+          <div class="progress-markers">
+            <button class="progress-marker active" data-step="1">1</button>
+            <button class="progress-marker" data-step="2">2</button>
+            <button class="progress-marker" data-step="3">3</button>
+            <button class="progress-marker" data-step="4">4</button>
+            <button class="progress-marker" data-step="5">5</button>
+          </div>
+        </div>
+
+        <!-- Steps grid -->
+        <div class="process-steps">
+          <article class="process-step active" data-step="1">
+            <div class="step-header">
+              <div class="step-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div class="step-number">Шаг 1</div>
             </div>
-          </article>
-          <article class="timeline-item">
-            <span>02</span>
-            <div>
-              <h3>Бесплатный замер</h3>
-              <p>Приезжаем на объект, обмеряем помещения, фиксируем особенности: состояние стен, коммуникации, сложные места.</p>
-              <span class="timeline-result">Результат: точные замеры, фото объекта</span>
+            <h3>Заявка и консультация</h3>
+            <p>Вы оставляете заявку, мы перезваниваем за 15 минут. Узнаём про объект, задачи и бюджет.</p>
+            <div class="step-result">
+              <span class="result-label">Результат:</span>
+              <span class="result-text">Понимание задачи, дата замера</span>
             </div>
+            <div class="step-duration">15 минут</div>
           </article>
-          <article class="timeline-item">
-            <span>03</span>
-            <div>
-              <h3>Смета за 2 часа</h3>
-              <p>На основе замеров составляем детальную смету с разбивкой по работам и материалам. Без «примерно» и «около».</p>
-              <span class="timeline-result">Результат: точная цена, 3 варианта по бюджету</span>
+
+          <div class="step-connector">
+            <svg viewBox="0 0 40 24" fill="none">
+              <path d="M0 12h32M24 4l8 8-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <article class="process-step" data-step="2">
+            <div class="step-header">
+              <div class="step-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <div class="step-number">Шаг 2</div>
             </div>
-          </article>
-          <article class="timeline-item">
-            <span>04</span>
-            <div>
-              <h3>Договор и старт</h3>
-              <p>Подписываем договор с фиксированной ценой и сроками. Закупаем материалы и выходим на объект.</p>
-              <span class="timeline-result">Результат: юридическая защита, начало работ</span>
+            <h3>Бесплатный замер</h3>
+            <p>Приезжаем на объект, обмеряем помещения, фиксируем особенности и сложные места.</p>
+            <div class="step-result">
+              <span class="result-label">Результат:</span>
+              <span class="result-text">Точные замеры, фото объекта</span>
             </div>
+            <div class="step-duration">1-2 часа</div>
           </article>
-          <article class="timeline-item">
-            <span>05</span>
-            <div>
-              <h3>Сдача и гарантия</h3>
-              <p>Принимаете работу по чек-листу. Подписываем акт, выдаём гарантийный талон на 3 года. Вы въезжаете!</p>
-              <span class="timeline-result">Результат: готовая квартира, гарантия 3 года</span>
+
+          <div class="step-connector">
+            <svg viewBox="0 0 40 24" fill="none">
+              <path d="M0 12h32M24 4l8 8-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <article class="process-step" data-step="3">
+            <div class="step-header">
+              <div class="step-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
+              <div class="step-number">Шаг 3</div>
             </div>
+            <h3>Смета за 2 часа</h3>
+            <p>Составляем детальную смету с разбивкой по работам и материалам. Без «примерно».</p>
+            <div class="step-result">
+              <span class="result-label">Результат:</span>
+              <span class="result-text">Точная цена, 3 варианта</span>
+            </div>
+            <div class="step-duration">2 часа</div>
           </article>
+
+          <div class="step-connector">
+            <svg viewBox="0 0 40 24" fill="none">
+              <path d="M0 12h32M24 4l8 8-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <article class="process-step" data-step="4">
+            <div class="step-header">
+              <div class="step-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+              </div>
+              <div class="step-number">Шаг 4</div>
+            </div>
+            <h3>Договор и старт</h3>
+            <p>Подписываем договор с фиксированной ценой и сроками. Выходим на объект.</p>
+            <div class="step-result">
+              <span class="result-label">Результат:</span>
+              <span class="result-text">Юридическая защита</span>
+            </div>
+            <div class="step-duration">1 день</div>
+          </article>
+
+          <div class="step-connector">
+            <svg viewBox="0 0 40 24" fill="none">
+              <path d="M0 12h32M24 4l8 8-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <article class="process-step" data-step="5">
+            <div class="step-header">
+              <div class="step-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
+                  <polyline points="7.5 19.79 7.5 14.6 3 12"/>
+                  <polyline points="21 12 16.5 14.6 16.5 19.79"/>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+              </div>
+              <div class="step-number">Шаг 5</div>
+            </div>
+            <h3>Сдача и гарантия</h3>
+            <p>Принимаете работу по чек-листу. Выдаём гарантийный талон на 3 года. Вы въезжаете!</p>
+            <div class="step-result">
+              <span class="result-label">Результат:</span>
+              <span class="result-text">Готовая квартира</span>
+            </div>
+            <div class="step-duration">Гарантия 3 года</div>
+          </article>
+        </div>
+
+        <div class="section-cta">
+          <a class="button button-primary" href="#quote">Начать с бесплатного замера</a>
         </div>
       </section>
 
@@ -544,7 +648,7 @@
           </article>
           <article class="faq-item">
             <h3>Работаете с дизайн-проектом?</h3>
-            <p>Да, работаем как по вашему дизайн-проекту, так и без него. Можем порекомендовать проверенного дизайнера или помочь с планировкой самостоятельно.</p>
+            <p>Да, работаем как по вашему дизайн-проекту, так и без него. Можем порекомендовать проверенного дизайнер�� или помочь с планировкой самостоятельно.</p>
           </article>
         </div>
       </section>
@@ -577,5 +681,81 @@
       </div>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const markers = document.querySelectorAll('.progress-marker');
+      const steps = document.querySelectorAll('.process-step');
+      const progressFill = document.querySelector('.progress-fill');
+
+      function setActiveStep(stepNum) {
+        // Update markers
+        markers.forEach((marker, index) => {
+          const markerStep = index + 1;
+          marker.classList.remove('active', 'completed');
+          if (markerStep < stepNum) {
+            marker.classList.add('completed');
+          } else if (markerStep === stepNum) {
+            marker.classList.add('active');
+          }
+        });
+
+        // Update steps
+        steps.forEach(step => {
+          const dataStep = parseInt(step.dataset.step);
+          step.classList.remove('active');
+          if (dataStep === stepNum) {
+            step.classList.add('active');
+          }
+        });
+
+        // Update progress bar
+        const progress = ((stepNum - 1) / (markers.length - 1)) * 100;
+        progressFill.style.width = progress + '%';
+      }
+
+      // Click handlers for markers
+      markers.forEach(marker => {
+        marker.addEventListener('click', function() {
+          const stepNum = parseInt(this.dataset.step);
+          setActiveStep(stepNum);
+        });
+      });
+
+      // Hover handlers for steps
+      steps.forEach(step => {
+        step.addEventListener('mouseenter', function() {
+          const stepNum = parseInt(this.dataset.step);
+          setActiveStep(stepNum);
+        });
+      });
+
+      // Auto-play animation
+      let currentStep = 1;
+      let autoPlayInterval;
+
+      function startAutoPlay() {
+        autoPlayInterval = setInterval(() => {
+          currentStep = currentStep >= 5 ? 1 : currentStep + 1;
+          setActiveStep(currentStep);
+        }, 3000);
+      }
+
+      function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+      }
+
+      // Start auto-play
+      startAutoPlay();
+
+      // Pause on hover
+      const processSection = document.querySelector('.process-section');
+      processSection.addEventListener('mouseenter', stopAutoPlay);
+      processSection.addEventListener('mouseleave', () => {
+        currentStep = parseInt(document.querySelector('.progress-marker.active')?.dataset.step || 1);
+        startAutoPlay();
+      });
+    });
+  </script>
 </body>
 </html>
