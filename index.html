@@ -364,6 +364,7 @@
         </div>
 
         <!-- Steps grid -->
+        <div class="process-steps-wrapper">
         <div class="process-steps">
           <article class="process-step active" data-step="1">
             <div class="step-header">
@@ -490,6 +491,7 @@
             <div class="step-duration">Гарантия 3 года</div>
           </article>
         </div>
+        </div>
 
         <div class="section-cta">
           <a class="button button-primary" href="#quote">Начать с бесплатного замера</a>
@@ -565,7 +567,7 @@
         <div class="calculator-content">
           <p class="eyebrow">Узнайте стоимость за 2 часа</p>
           <h2>Сколько стоит ремонт вашей квартиры?</h2>
-          <p>Оставьте заявку — перезвоним за 15 минут, договоримся о ��есплатном замере и пришлём точную смету в тот же день.</p>
+          <p>Оставьте заявку — перезвоним за 15 минут, договоримся о ����есплатном замере и пришлём точную смету в тот же день.</p>
           <div class="calculator-features">
             <span class="calc-feature">Замер бесплатно</span>
             <span class="calc-feature">Смета за 2 часа</span>
@@ -757,65 +759,79 @@
       });
 
       // Auto-scroll on mouse position (desktop only)
+      const stepsWrapper = document.querySelector('.process-steps-wrapper');
       const stepsContainer = document.querySelector('.process-steps');
       let scrollAnimationId = null;
+      let currentScrollDelta = 0;
+
+      // Update scroll indicators
+      function updateScrollIndicators() {
+        const scrollLeft = stepsContainer.scrollLeft;
+        const maxScroll = stepsContainer.scrollWidth - stepsContainer.clientWidth;
+
+        if (maxScroll > 0) {
+          stepsWrapper.classList.toggle('can-scroll-left', scrollLeft > 5);
+          stepsWrapper.classList.toggle('can-scroll-right', scrollLeft < maxScroll - 5);
+        }
+      }
+
+      // Initial check
+      updateScrollIndicators();
+      stepsContainer.addEventListener('scroll', updateScrollIndicators);
+      window.addEventListener('resize', updateScrollIndicators);
+
+      function animateScroll() {
+        if (Math.abs(currentScrollDelta) > 0.1) {
+          stepsContainer.scrollLeft += currentScrollDelta;
+          scrollAnimationId = requestAnimationFrame(animateScroll);
+        } else {
+          scrollAnimationId = null;
+        }
+      }
 
       function handleMouseMove(e) {
         // Only on desktop (screen > 600px)
         if (window.innerWidth <= 600) return;
 
-        const rect = stepsContainer.getBoundingClientRect();
+        const rect = stepsWrapper.getBoundingClientRect();
         const mouseX = e.clientX - rect.left;
         const containerWidth = rect.width;
-        const scrollWidth = stepsContainer.scrollWidth;
-        const maxScroll = scrollWidth - containerWidth;
+        const maxScroll = stepsContainer.scrollWidth - stepsContainer.clientWidth;
 
         // If no scrollable content, exit
         if (maxScroll <= 0) return;
 
-        // Define edge zones (20% on each side)
-        const edgeZone = containerWidth * 0.2;
-        const scrollSpeed = 4;
+        // Define edge zones (25% on each side for easier triggering)
+        const edgeZone = containerWidth * 0.25;
+        const scrollSpeed = 6;
 
-        // Cancel any existing animation
-        if (scrollAnimationId) {
-          cancelAnimationFrame(scrollAnimationId);
-          scrollAnimationId = null;
+        if (mouseX < edgeZone) {
+          // Left edge - scroll left
+          const intensity = 1 - (mouseX / edgeZone);
+          currentScrollDelta = -scrollSpeed * intensity * intensity;
+        } else if (mouseX > containerWidth - edgeZone) {
+          // Right edge - scroll right
+          const intensity = (mouseX - (containerWidth - edgeZone)) / edgeZone;
+          currentScrollDelta = scrollSpeed * intensity * intensity;
+        } else {
+          currentScrollDelta = 0;
         }
 
-        function smoothScroll() {
-          let scrollDelta = 0;
-
-          if (mouseX < edgeZone) {
-            // Left edge - scroll left
-            const intensity = 1 - (mouseX / edgeZone);
-            scrollDelta = -scrollSpeed * intensity;
-          } else if (mouseX > containerWidth - edgeZone) {
-            // Right edge - scroll right
-            const intensity = (mouseX - (containerWidth - edgeZone)) / edgeZone;
-            scrollDelta = scrollSpeed * intensity;
-          }
-
-          if (scrollDelta !== 0) {
-            stepsContainer.scrollLeft = Math.max(0, Math.min(maxScroll, stepsContainer.scrollLeft + scrollDelta));
-            scrollAnimationId = requestAnimationFrame(smoothScroll);
-          }
-        }
-
-        if (mouseX < edgeZone || mouseX > containerWidth - edgeZone) {
-          scrollAnimationId = requestAnimationFrame(smoothScroll);
+        if (currentScrollDelta !== 0 && !scrollAnimationId) {
+          scrollAnimationId = requestAnimationFrame(animateScroll);
         }
       }
 
       function handleMouseLeave() {
+        currentScrollDelta = 0;
         if (scrollAnimationId) {
           cancelAnimationFrame(scrollAnimationId);
           scrollAnimationId = null;
         }
       }
 
-      stepsContainer.addEventListener('mousemove', handleMouseMove);
-      stepsContainer.addEventListener('mouseleave', handleMouseLeave);
+      stepsWrapper.addEventListener('mousemove', handleMouseMove);
+      stepsWrapper.addEventListener('mouseleave', handleMouseLeave);
     });
   </script>
 </body>
