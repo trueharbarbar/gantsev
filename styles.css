@@ -558,17 +558,342 @@ button {
   margin-bottom: 8px;
 }
 
-.site-footer {
+/* Problem cards */
+.problems-section .section-heading {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 28px;
+}
+
+.problem-card {
+  position: relative;
+  padding-top: 52px;
+}
+
+.problem-icon {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 32px;
+  height: 32px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-pale);
+  color: var(--accent-strong);
+  font-weight: 800;
+  font-size: 0.85rem;
+  border-radius: 50%;
+}
+
+/* Service cards */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-price {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent-strong);
+}
+
+.service-includes {
+  margin: 0;
+  padding-left: 18px;
+  flex-grow: 1;
+}
+
+.service-includes li {
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+}
+
+.service-time {
+  display: inline-block;
+  margin-top: auto;
+  padding: 6px 12px;
+  background: var(--accent-pale);
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.service-card-popular {
+  position: relative;
+  background: linear-gradient(135deg, rgba(208, 107, 45, 0.08), rgba(245, 228, 208, 0.95));
+  border: 2px solid var(--accent);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 16px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 999px;
+}
+
+.section-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+/* Case meta */
+.case-meta {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.case-budget,
+.case-duration {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+/* Guarantees */
+.guarantees-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.guarantee-item {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  gap: 18px;
+  padding: 22px 24px;
+  border-radius: 22px;
+  background: #fff8ee;
+  border: 1px solid rgba(87, 56, 24, 0.08);
+}
+
+.guarantee-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: var(--deep);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.guarantee-content h3 {
+  margin-bottom: 8px;
+}
+
+.guarantee-content p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Timeline result */
+.timeline-result {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 12px;
+  background: rgba(208, 107, 45, 0.12);
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+/* Reviews */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.review-card {
+  padding: 24px;
+  border-radius: 24px;
+  background: #fff8ee;
+  border: 1px solid rgba(87, 56, 24, 0.08);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.review-avatar {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--deep);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  border-radius: 50%;
+}
+
+.review-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.review-name {
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.review-project {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.review-text {
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.review-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* Calculator CTA */
+.calculator-cta {
+  background: linear-gradient(135deg, var(--deep), #1d241d);
+  text-align: center;
+}
+
+.calculator-content {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.calculator-cta .eyebrow,
+.calculator-cta h2 {
+  color: #fff;
+}
+
+.calculator-cta p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.calculator-features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.calc-feature {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+/* Proposal benefits */
+.proposal-benefits {
+  margin-top: 22px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.benefit-check {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.85rem;
+  border-radius: 50%;
+}
+
+/* Final CTA */
+.final-cta {
+  background: linear-gradient(135deg, rgba(208, 107, 45, 0.12), rgba(245, 228, 208, 0.95));
+  text-align: center;
+}
+
+.final-cta-content {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.final-cta h2 {
+  max-width: none;
+}
+
+.final-cta p {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.final-cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Footer */
+.site-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 18px;
   margin-top: 22px;
-  padding: 18px 22px;
+  padding: 24px 28px;
   background: rgba(255, 248, 239, 0.84);
 }
 
 .site-footer p {
   margin: 0;
+}
+
+.footer-name {
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.footer-contacts a {
+  color: var(--accent-strong);
+}
+
+.footer-legal {
+  text-align: right;
+  font-size: 0.88rem;
+  color: var(--muted);
 }
 
 @media (max-width: 980px) {
@@ -577,8 +902,14 @@ button {
   .cases-grid,
   .showcase-grid,
   .three-up,
-  .trust-strip {
+  .trust-strip,
+  .reviews-grid,
+  .site-footer {
     grid-template-columns: 1fr;
+  }
+
+  .footer-legal {
+    text-align: left;
   }
 
   h1,
@@ -662,5 +993,24 @@ button {
     position: static;
     width: 100%;
     margin-top: 14px;
+  }
+
+  .guarantee-item {
+    grid-template-columns: 1fr;
+  }
+
+  .guarantee-number {
+    width: 42px;
+    height: 42px;
+    font-size: 0.95rem;
+  }
+
+  .final-cta-actions {
+    flex-direction: column;
+  }
+
+  .calculator-features {
+    flex-direction: column;
+    align-items: center;
   }
 }
